@@ -1,21 +1,28 @@
 package cchx.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "person")
 public class Person {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
+	@Column(nullable = false)
 	private String name;
+
+	@Column(nullable = false)
 	private float latitude;
+
+	@Column(nullable = false)
 	private float longitude;
+
+	@Column(nullable = false)
 	private int age;
+
+	@Column(nullable = false)
 	private String gender;
 
 	public String getName() {
