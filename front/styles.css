@@ -1,0 +1,10 @@
+.navbar-default {
+    background-color: #00ADFC;
+    border: none;
+	height: 200px;
+}
+
+#logo {
+	height: 50px;
+	vertical-align: middle;
+}
