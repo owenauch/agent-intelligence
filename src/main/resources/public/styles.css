@@ -1,12 +1,12 @@
 .navbar-default {
     background-color: #00ADFC;
     border: none;
-	height: 150px;
+	height: 100px;
 }
 
 #logo {
 	height: 50px;
-    margin-top: 50px;
+    margin-top: 25px;
     margin-left: 50px;
 }
 
@@ -15,9 +15,17 @@
 }
 
 #wholecontainer {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 #searchcontainer {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#agent-title, #agent-subtitle {
+    text-align: center;
+}
+
+#agent-title {
+    margin-top: 10px;
 }

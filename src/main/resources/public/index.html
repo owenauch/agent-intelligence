@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap 101 Template</title>
+        <title>CrossChx Intelligence</title>
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
         <!-- Leaflet -->
@@ -17,6 +17,9 @@
             </a>
         </nav>
 
+        <h1 id="agent-title">Double Agent Intelligence</h1>
+        <h4 id="agent-subtitle">Filter by name and maximum age</h4>
+
         <div id="wholecontainer" class="container col-md-10 col-md-offset-1">
             <div id="filtercontainer">
                 <div id="searchcontainer" class="container col-md-6 col-md-offset-1">
@@ -27,11 +30,11 @@
                     <!-- <label for="agebox">Max age:</label> -->
                     <input class="form-control input-lg" id="agebox" type="number" min="0" step="1" placeholder="Max age">
                 </div>
-                <div class="container col-md-2">
-                    <button type="button" class="btn btn-lg btn-info">Primary</button>
+                <div id="buttoncontainer" class="container col-md-1">
+                    <button type="button" class="btn btn-lg btn-info">Filter Agents</button>
                 </div>
             </div>
-            <div id="mapcontainer" class="container col-md-10 col-md-offset-1">
+            <div id="mapcontainer" class="container col-md-12">
                 <div id="mapid"></div>
             </div>
         </div>
