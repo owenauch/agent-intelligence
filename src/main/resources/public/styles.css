@@ -13,3 +13,11 @@
 #mapid {
     height: 500px;
 }
+
+#wholecontainer {
+    margin-top: 30px;
+}
+
+#searchcontainer {
+    margin-bottom: 10px;
+}

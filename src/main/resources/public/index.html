@@ -17,11 +17,24 @@
             </a>
         </nav>
 
-        <div id="mapcontainer" class="container col-md-10 col-md-offset-1">
-            <div id="mapid"></div>
+        <div id="wholecontainer" class="container col-md-10 col-md-offset-1">
+            <div id="filtercontainer">
+                <div id="searchcontainer" class="container col-md-6 col-md-offset-1">
+                    <!-- <label for="inputlg">Search for an agent:</label> -->
+                    <input class="form-control input-lg" id="searchbox" type="text" placeholder="Search for an agent">
+                </div>
+                <div id="agecontainer" class="container col-md-2">
+                    <!-- <label for="agebox">Max age:</label> -->
+                    <input class="form-control input-lg" id="agebox" type="number" min="0" step="1" placeholder="Max age">
+                </div>
+                <div class="container col-md-2">
+                    <button type="button" class="btn btn-lg btn-info">Primary</button>
+                </div>
+            </div>
+            <div id="mapcontainer" class="container col-md-10 col-md-offset-1">
+                <div id="mapid"></div>
+            </div>
         </div>
-
-
 
 
         <!-- Make sure the scripts are loaded after the page -->

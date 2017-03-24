@@ -17,8 +17,19 @@
             </a>
         </nav>
 
-        <div id="mapcontainer" class="container col-md-10 col-md-offset-1">
-            <div id="mapid"></div>
+        <div id="wholecontainer" class="container col-md-10 col-md-offset-1">
+            <div id="searchcontainer" class="container col-md-6 col-md-offset-1">
+                <label for="inputlg">Search for an agent:</label>
+                <input class="form-control input-lg" id="searchbox" type="text">
+            </div>
+            <div id="agecontainer" class="container col-md-2">
+                <label for="agebox">Max age:</label>
+                <input class="form-control input-lg" id="agebox" type="number" min="0" step="1">
+            </div>
+            <button type="button" class="btn btn-lg btn-info col-md-2">Primary</button>
+            <div id="mapcontainer" class="container col-md-10 col-md-offset-1">
+                <div id="mapid"></div>
+            </div>
         </div>
 
 
