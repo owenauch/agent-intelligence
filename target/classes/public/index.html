@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Javascript Four-Function Calculator</title>
-	<script src="calculator.js"></script>
-</head>
-<body>
-    <p>
-        <label for="firstnumber">First Number:</label>
-        <input type="number" step="any" name="number" id="firstnumber" />
-    </p>
-    <p>
-        <label for="secondnumber">Second Number:</label>
-        <input type="number" step="any" name="number" id="secondnumber" />
-    </p>
-    <p>Function to perform:</p>
-    <input type="radio" name="function" value="addition" id="additioninput"/> <label for="additioninput">Add (+)</label>
-    <input type="radio" name="function" value="subtraction" id="subtractioninput"/> <label for="subtractioninput">Subtract (-)</label>
-    <input type="radio" name="function" value="multiplication" id="multiplicationinput"/> <label for="multiplicationinput">Multiply (*)</label>
-    <input type="radio" name="function" value="division" id="divisioninput"/> <label for="divisioninput">Divide (/)</label>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap 101 Template</title>
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-static-top" id='top'>
+            <a href="#" class="navbar-left">
+                <img src="images/crosschx-logo.png" id="logo"></img>
+            </a>
+        </nav>
 
-	<p id="result"></p>
-</body>
+        <div id="mapcontainer" class="container col-md-10 col-md-offset-1">
+            <div id="mapid"></div>
+        </div>
+
+
+
+
+        <!-- Make sure the scripts are loaded after the page -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+        <script src="index.js"></script>
+    </body>
 </html>
