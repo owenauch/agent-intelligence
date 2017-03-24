@@ -55,7 +55,22 @@ function generateMap() {
 function getAgents(updateType) {
 	$.get("persons", function(json, status) {
 		// if "all" option, indicating that we'd like to display all agents
+		alert(updateType);
 		if (status == "success" && updateType == "all") {
+			// call updateMap
+			updateMap(json);
+		}
+		else if (status == "success" && updateType == "name") {
+			for (agent in json._embedded.persons) {
+				var currentAgent = json._embedded.persons[agent];
+				var filterName = $("#searchbox").val();
+				if (currentAgent.name.indexOf(filterName) < 0) {
+					delete json._embedded.persons[agent];
+				}
+			}
+
+			console.log(json);
+
 			// call updateMap
 			updateMap(json);
 		}
@@ -73,6 +88,7 @@ function updateMap(json) {
 	for (mark in markerArray) {
 		map.removeLayer(markerArray[mark]);
 	}
+	markerArray = [];
 
 	// loop through agents in json parameter
 	for (agent in json._embedded.persons) {
@@ -114,4 +130,29 @@ window.onload = function(){
 
 	// get all agents and put on the map
 	getAgents("all");
+
+	// set event listener for filter button
+	$( "#filterbutton" ).click(function() {
+		// filter type set
+		filterType = "";
+		var searchIn = $("#searchbox").val();
+		var ageIn = $("#agebox").val();
+
+		if (ageIn == "") {
+			if (searchIn != "") {
+				filterType = "name";
+			}
+		}
+		else {
+			if (searchIn == "") {
+				filterType = "age";
+			}
+			else {
+				filterType = "both";
+			}
+		}
+
+		// call get agents with the parameter
+		getAgents(filterType);
+	});
 }
