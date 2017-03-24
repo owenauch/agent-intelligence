@@ -1,0 +1,15 @@
+.navbar-default {
+    background-color: #00ADFC;
+    border: none;
+	height: 150px;
+}
+
+#logo {
+	height: 50px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#mapid {
+    height: 500px; 
+}
