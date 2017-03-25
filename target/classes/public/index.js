@@ -172,6 +172,7 @@ window.onload = function(){
 		var searchIn = $("#searchbox").val();
 		var ageIn = $("#agebox").val();
 
+		// filter type logics
 		if (ageIn == "") {
 			if (searchIn != "") {
 				filterType = "name";

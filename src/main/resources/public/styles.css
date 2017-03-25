@@ -1,7 +1,8 @@
 .navbar-default {
-    background-color: #00ADFC;
-    border: none;
 	height: 100px;
+
+    border: none;
+    background-color: #00ADFC;
 }
 
 #logo {
@@ -16,6 +17,7 @@
 
 #wholecontainer {
     margin-top: 10px;
+    margin-bottom: 40px;
 }
 
 #searchcontainer {
@@ -26,6 +28,25 @@
     text-align: center;
 }
 
-#agent-title {
-    margin-top: 10px;
+#headers {
+    margin-top: 20px;
+}
+
+#byline-container {
+    margin-top: -10px;
+}
+
+#byline {
+    text-align: center;
+
+    color: #00ADFC;
+
+    font-size: 15px;
+    line-height: 40px;
+}
+
+a {
+    text-decoration: none !important;
+
+    color: #00ADFC;
 }
