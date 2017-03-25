@@ -55,21 +55,55 @@ function generateMap() {
 function getAgents(updateType) {
 	$.get("persons", function(json, status) {
 		// if "all" option, indicating that we'd like to display all agents
-		alert(updateType);
 		if (status == "success" && updateType == "all") {
 			// call updateMap
 			updateMap(json);
 		}
+		// if just the name is filtered
 		else if (status == "success" && updateType == "name") {
+
+			// remove agent from json object if agent's name does not contain string
 			for (agent in json._embedded.persons) {
 				var currentAgent = json._embedded.persons[agent];
-				var filterName = $("#searchbox").val();
-				if (currentAgent.name.indexOf(filterName) < 0) {
+				var filterName = $("#searchbox").val().toLowerCase();
+				var currentName = currentAgent.name.toLowerCase();
+				if (currentName.indexOf(filterName) < 0) {
 					delete json._embedded.persons[agent];
 				}
 			}
 
-			console.log(json);
+			// call updateMap
+			updateMap(json);
+		}
+		// if just the age is filtered
+		else if (status == "success" && updateType == "age") {
+			// remove agent from json object if agent's age is not less than max age
+			for (agent in json._embedded.persons) {
+				var currentAgent = json._embedded.persons[agent];
+				var filterAge = parseInt($("#agebox").val());
+				var currentAge = currentAgent.age;
+				if (currentAge > filterAge) {
+					delete json._embedded.persons[agent];
+				}
+			}
+
+			// call updateMap
+			updateMap(json);
+		}
+		// if agent name and age is filtered
+		else if (status == "success" && updateType == "both") {
+			// remove agent from json object if agent's age is not less than max age
+			for (agent in json._embedded.persons) {
+				var currentAgent = json._embedded.persons[agent];
+				var filterAge = parseInt($("#agebox").val());
+				var currentAge = currentAgent.age;
+				var filterName = $("#searchbox").val().toLowerCase();
+				var currentName = currentAgent.name.toLowerCase();
+
+				if (currentAge > filterAge || currentName.indexOf(filterName) < 0) {
+					delete json._embedded.persons[agent];
+				}
+			}
 
 			// call updateMap
 			updateMap(json);
@@ -138,9 +172,13 @@ window.onload = function(){
 		var searchIn = $("#searchbox").val();
 		var ageIn = $("#agebox").val();
 
+		// filter type logics
 		if (ageIn == "") {
 			if (searchIn != "") {
 				filterType = "name";
+			}
+			else {
+				filterType = "all";
 			}
 		}
 		else {
