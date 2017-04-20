@@ -1,3 +1,3 @@
-cchx/Application.class
-cchx/model/Person.class
-cchx/repository/PersonRepository.class
+intel/repository/PersonRepository.class
+intel/Application.class
+intel/model/Person.class

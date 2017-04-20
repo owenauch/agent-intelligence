@@ -1,15 +1,17 @@
-package cchx.model;
+package intel.model;
 
 import javax.persistence.*;
 
+// create person class that's accessible with data.sql
 @Entity
 @Table(name = "person")
 public class Person {
-
+	// id value
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
+	// various properties and methods
 	@Column(nullable = false)
 	private String name;
 
